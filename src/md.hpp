@@ -134,9 +134,9 @@ private:
     }
     int ret = api_->SubscribeMarketData(instruments, arr.Length());
     for (size_t i = 0; i < arr.Length(); i++) {
-      delete instruments[i];
+      delete[] instruments[i];
     }
-    delete instruments;
+    delete[] instruments;
     return Napi::Number::New(info.Env(), ret);
   }
 
@@ -151,9 +151,9 @@ private:
     }
     int ret = api_->UnSubscribeMarketData(instruments, arr.Length());
     for (size_t i = 0; i < arr.Length(); i++) {
-      delete instruments[i];
+      delete[] instruments[i];
     }
-    delete instruments;
+    delete[] instruments;
     return Napi::Number::New(info.Env(), ret);
   }
 
@@ -168,9 +168,9 @@ private:
     }
     int ret = api_->SubscribeForQuoteRsp(instruments, arr.Length());
     for (size_t i = 0; i < arr.Length(); i++) {
-      delete instruments[i];
+      delete[] instruments[i];
     }
-    delete instruments;
+    delete[] instruments;
     return Napi::Number::New(info.Env(), ret);
   }
 
@@ -185,9 +185,9 @@ private:
     }
     int ret = api_->UnSubscribeForQuoteRsp(instruments, arr.Length());
     for (size_t i = 0; i < arr.Length(); i++) {
-      delete instruments[i];
+      delete[] instruments[i];
     }
-    delete instruments;
+    delete[] instruments;
     return Napi::Number::New(info.Env(), ret);
   }
 
